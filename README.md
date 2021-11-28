@@ -4,7 +4,7 @@
 
 - C++
 - C#
-- Python
+- Python - https://github.com/vkouznetsov/guides/tree/main/Python
 
 ## Data
 
