@@ -19,3 +19,8 @@ df = pd.DataFrame(
 df
 
 # %%
+print(type(df))
+print(df.shape)
+print(df.columns)
+print(df.dtypes)
+print(df.info())

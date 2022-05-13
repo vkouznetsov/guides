@@ -5,6 +5,16 @@ import sys
 print(sys.version_info)
 print("Hello, World!")
 
+# Comment
+
+'''
+    Since Python will ignore string literals that are not assigned to a variable,
+    you can add a multiline string (triple quotes) in your code, 
+    and place your comment inside it
+
+'''
+
+
 # %% ##########################################################
 #
 #               Dynamically typed language
@@ -18,6 +28,9 @@ my_int = 42
 # int - unlimited precision integer value
 # Examples: 10, 0b10, 0o10, 0x10
 # Constructor: int(3.5) - rounding towards 0
+# Convert from string int("3")
+# Convert from string specifing base int("3", 3)
+
 
 # Float
 
@@ -42,50 +55,6 @@ print(my_int)
 print(my_float)
 print(my_bool)
 print(null_value)
-
-
-# %% ########################################################
-#
-#                    Strings
-#
-#############################################################
-
-# Strings are immutable
-# Unicode, UTF-8
-
-single_quote = 'Single quote string'
-double_quote = "Double quoted string"
-
-multi_line = """ Multi 
-    line
-    string
-"""
-raw_string = r'Raw / String'
-
-# Universal new line
-
-new_line = "\n"
-
-
-# Joining and splitting String
-
-colors = ';'.join(['blue', 'yellow'])
-print(colors)
-print(colors.split(';'))
-print(''.join(['blue', 'yellow']))
-
-string_partition = "unforgetable".partition('forget')
-print(string_partition)
-
-# when you do not need separator, use _
-one, _, three = "unforgetable".partition('forget')
-print(one, three, sep='')
-
-
-# Formatting
-
-print('{0} north, {0} east'.format(57.7, 45,9))
-print(f'Inline formating: {string_partition}')
 
 
 # %% ########################################################
@@ -127,7 +96,16 @@ print(f'Today: {today}')
 print(f'Now: {now}')
 print(dd)
 
+# %% ########################################################
+#
+#                    Operators
+#
+#############################################################
 
+# == value equality operator
+# === identity equality operator - same object
+
+# is - or - and - in
 
 
 # %% ########################################################
@@ -286,35 +264,15 @@ print(type(my_set))
 
 # %% ########################################################
 #
-#                         Function
+#                         Enumerate
 #
 #############################################################
 
-def my_function(x):
-    """This is docstring"""
-    print(x)
-    return x
+# enumerate(collection) return tuple index, value
 
-# Function can return tuple / unpacking
-
-def minmax(items): 
-    return min(items), max(items)
-
-lower, upper = minmax([81, 82, 83, 84, 85])
-
-print 
-
-# %% ########################################################
-#
-#             Dunder '__name__'
-#
-#############################################################
-
-
-# how to execute function if module called directly
-
-# if __name__ = '__main__':
-#    execute_function()
+enum_list = [55, 43, 14, 68]
+for i, v in enumerate(enum_list):
+    print(f'{i} - {v}')
 
 
 
@@ -333,14 +291,14 @@ print(a == b)
 print(a is b) # references same object 5
 
 # Scopes:
-# - Local
-# - Enclosing
-# - Global 
+# - Local - inside current function
+# - Enclosing - inside enclosing functions
+# - Global - top level of the module
 # - Built-in
 
 # global my_variable - references global 
 
-
+# Source code blocks do not introduce new scope
 
 # %% ########################################################
 #
@@ -513,4 +471,14 @@ print(p.my_property)
 p.my_property = 14
 print(p.my_property)
 
-# %%
+
+# %% ########################################################
+#
+#             File I/O
+#
+#############################################################
+
+f = open ('path')
+
+# Mode rwa and tb
+
